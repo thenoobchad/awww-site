@@ -1,0 +1,1 @@
+DROP INDEX `transactions_email_unique`;

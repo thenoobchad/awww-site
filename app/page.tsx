@@ -1,9 +1,13 @@
-import Image from "next/image";
+
+import Link from "next/link";
+
 
 export default function Home() {
   return (
-    <div className="h-screen">
-      <h1>hey lets build shit</h1>
+    <div>
+      <main className="flex flex-col justify- text-center max-w-5xl mx-auto h-dvh">
+        Home page
+      </main>
     </div>
   );
 }
