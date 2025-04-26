@@ -7,7 +7,7 @@ import { redirect } from "next/navigation";
 export default async function EditTransactionPage({
 	params,
 }: {
-	params: { id: number };
+	params: Promise<{ id: number }>;
 }) {
 	const { id } = await params;
 	const transaction = (
@@ -43,7 +43,9 @@ export default async function EditTransactionPage({
 		if (typeof status !== "string") throw new Error("Status is required");
 
 		if (!isValidStatus(status)) {
-			throw new Error(`Invalid status value. Must be one of: ${validStatuses.join(",")}`);
+			throw new Error(
+				`Invalid status value. Must be one of: ${validStatuses.join(",")}`
+			);
 		}
 		await db
 			.update(transactions)
@@ -56,7 +58,6 @@ export default async function EditTransactionPage({
 
 		revalidatePath("/");
 		redirect("/dashboard/transactions");
-		console.log("status updated");
 	};
 
 	return (
