@@ -1,6 +1,5 @@
 // import SideNav from "@/components/ui/SideNav";
 
-import { myFont } from "@/app/layout";
 import Link from "next/link";
 import { ReactNode } from "react";
 import {

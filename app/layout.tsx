@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 	applicationName: "Invest im real time",
 };
 
-export const myFont = localFont({
+const myFont = localFont({
 	src: "../public/fonts/Geist-Regular.ttf",
 	variable: "--font-myFont",
 });
